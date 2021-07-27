@@ -4,13 +4,13 @@ import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
 
 export const MainContainer = styled.main`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 345px);
+  justify-content: space-evenly;
 `;
 
 export const StyledTypography = styled(Typography)`
-  flex: 0 0 100%;
+  grid-column: 1 / -1;
   margin-top: 20px;
   text-align: center;
 `;

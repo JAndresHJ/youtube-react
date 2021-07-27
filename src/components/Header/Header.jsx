@@ -35,6 +35,10 @@ export default function Header() {
     setAnchorEl(event.currentTarget);
   };
 
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
+
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
@@ -42,10 +46,6 @@ export default function Header() {
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
   };
 
   const menuId = 'primary-search-account-menu';
@@ -59,16 +59,8 @@ export default function Header() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Login</MenuItem>
     </Menu>
-  );
-
-  const darkModeSwitch = (
-    <FormControlLabel
-      control={<Switch checked={isDarkMode} onChange={handleChange} name="dark-mode" />}
-      label="Dark mode"
-    />
   );
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
@@ -93,7 +85,6 @@ export default function Header() {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
-      <MenuItem>{darkModeSwitch}</MenuItem>
     </Menu>
   );
 
@@ -112,7 +103,7 @@ export default function Header() {
             color="inherit"
             aria-label="open drawer"
           >
-            <MenuIcon />
+            <MenuIcon data-testid="menu-icon" />
           </IconButton>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -129,7 +120,12 @@ export default function Header() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            {darkModeSwitch}
+            <FormControlLabel
+              control={
+                <Switch checked={isDarkMode} onChange={handleChange} name="dark-mode" />
+              }
+              label="Dark mode"
+            />
             <IconButton
               edge="end"
               aria-label="account of current user"
