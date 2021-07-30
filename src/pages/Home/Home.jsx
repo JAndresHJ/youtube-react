@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Components
-import Videos from '../../components/Videos';
+import VideoList from '../../components/Videos';
 
 import { MainContainer, StyledTypography } from './styled';
 
@@ -11,7 +11,7 @@ const Home = () => {
       <StyledTypography variant="h2" gutterBottom>
         Welcome to the Challenge!
       </StyledTypography>
-      <Videos />
+      <VideoList />
     </MainContainer>
   );
 };

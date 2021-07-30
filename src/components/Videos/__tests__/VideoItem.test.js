@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import VideoItem from './VideoItem';
+import VideoItem from '../VideoItem/VideoItem';
 
 const videoItemProps = {
   title: 'mocked title',

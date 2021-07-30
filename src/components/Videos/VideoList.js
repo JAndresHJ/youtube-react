@@ -6,7 +6,7 @@ import VideoItem from './VideoItem/VideoItem';
 // Utils
 import mockedVideos from '../../utils/youtube-videos-mock.json';
 
-const Videos = () => {
+const VideoList = () => {
   const { items } = mockedVideos;
 
   return items.map((video, idx) => (
@@ -22,4 +22,4 @@ const Videos = () => {
   ));
 };
 
-export default Videos;
+export default VideoList;
