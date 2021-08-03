@@ -14,7 +14,7 @@ import MobileMenu from './MobileMenu';
 // Helpers
 import { useStyles } from './styles';
 
-export default function Header() {
+export default function Header({ search }) {
   const classes = useStyles();
 
   return (
@@ -27,7 +27,7 @@ export default function Header() {
       >
         <Toolbar>
           <BurgerMenu />
-          <SearchInput />
+          <SearchInput onFormSubmit={search} />
           <DesktopMenu />
           <MobileMenu />
         </Toolbar>
