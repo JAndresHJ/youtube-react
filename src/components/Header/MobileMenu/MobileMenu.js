@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
 // Material UI
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import IconButton from '@material-ui/core/IconButton';
+
+// Components
+import MobileMenuItems from './MobileMenuItems';
 
 // Styles
 import { useStyles } from './styles';
@@ -25,30 +25,6 @@ const MobileMenu = () => {
     setMobileMoreAnchorEl(null);
   };
 
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem onClick={handleMobileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-    </Menu>
-  );
-
   return (
     <>
       <div className={classes.sectionMobile}>
@@ -62,7 +38,12 @@ const MobileMenu = () => {
           <MoreIcon />
         </IconButton>
       </div>
-      {renderMobileMenu}
+      <MobileMenuItems
+        mobileMoreAnchorEl={mobileMoreAnchorEl}
+        open={isMobileMenuOpen}
+        handleMobileMenuClose={handleMobileMenuClose}
+        handleMobileMenuOpen={handleMobileMenuOpen}
+      />
     </>
   );
 };

@@ -11,7 +11,7 @@ const { items } = mockedVideos;
 
 describe('Video component', () => {
   it('displays the list of the videos', () => {
-    render(<VideoList />);
+    render(<VideoList videos={items} />);
 
     const cardElements = screen.getAllByRole('button');
 

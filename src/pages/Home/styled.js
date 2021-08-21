@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 export const MainContainer = styled.main`
   display: grid;
   grid-template-columns: repeat(auto-fill, 345px);
+  grid-template-rows: auto 1fr;
   justify-content: space-evenly;
 `;
 
